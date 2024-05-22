@@ -1,5 +1,17 @@
 # @solana/sysvars
 
+## 2.0.0-preview.4
+
+### Patch Changes
+
+- [#2606](https://github.com/solana-labs/solana-web3.js/pull/2606) [`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b) Thanks [@lorisleiva](https://github.com/lorisleiva)! - Use commonjs package type
+
+- Updated dependencies [[`26dae19`](https://github.com/solana-labs/solana-web3.js/commit/26dae190c2ec835fbdaa7b7d66ca33d6ba0727b8), [`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b)]:
+  - @solana/codecs@2.0.0-preview.4
+  - @solana/rpc-types@2.0.0-preview.4
+  - @solana/accounts@2.0.0-preview.4
+  - @solana/errors@2.0.0-preview.4
+
 ## 2.0.0-preview.3
 
 ### Patch Changes

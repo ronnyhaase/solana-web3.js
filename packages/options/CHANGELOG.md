@@ -1,5 +1,54 @@
 # @solana/options
 
+## 2.0.0-preview.4
+
+### Patch Changes
+
+- [#2715](https://github.com/solana-labs/solana-web3.js/pull/2715) [`26dae19`](https://github.com/solana-labs/solana-web3.js/commit/26dae190c2ec835fbdaa7b7d66ca33d6ba0727b8) Thanks [@lorisleiva](https://github.com/lorisleiva)! - Consolidated `getNullableCodec` and `getOptionCodec` with their `Zeroable` counterparts and added more configurations
+
+  Namely, the `prefix` option can now be set to `null` and the `fixed` option was replaced with the `noneValue` option which can be set to `"zeroes"` for `Zeroable` codecs or a custom byte array for custom representations of none values. This means the `getZeroableNullableCodec` and `getZeroableOptionCodec` functions were removed in favor of the new options.
+
+  ```ts
+  // Before.
+  getZeroableNullableCodec(getU16Codec());
+
+  // After.
+  getNullableCodec(getU16Codec(), { noneValue: "zeroes", prefix: null });
+  ```
+
+  Additionally, it is now possible to create nullable codecs that have no `prefix` nor `noneValue`. In this case, the existence of the nullable item is indicated by the presence of any remaining bytes left to decode.
+
+  ```ts
+  const codec = getNullableCodec(getU16Codec(), { prefix: null });
+  codec.encode(42); // 0x2a00
+  codec.encode(null); // Encodes nothing.
+  codec.decode(new Uint8Array([42, 0])); // 42
+  codec.decode(new Uint8Array([])); // null
+  ```
+
+  Also note that it is now possible for custom `noneValue` byte arrays to be of any length — previously, it had to match the fixed-size of the nullable item.
+
+  Here is a recap of all supported scenarios, using a `u16` codec as an example:
+
+  | `encode(42)` / `encode(null)` | No `noneValue` (default) | `noneValue: "zeroes"`       | Custom `noneValue` (`0xff`) |
+  | ----------------------------- | ------------------------ | --------------------------- | --------------------------- |
+  | `u8` prefix (default)         | `0x012a00` / `0x00`      | `0x012a00` / `0x000000`     | `0x012a00` / `0x00ff`       |
+  | Custom `prefix` (`u16`)       | `0x01002a00` / `0x0000`  | `0x01002a00` / `0x00000000` | `0x01002a00` / `0x0000ff`   |
+  | No `prefix`                   | `0x2a00` / `0x`          | `0x2a00` / `0x0000`         | `0x2a00` / `0xff`           |
+
+  Reciprocal changes were made with `getOptionCodec`.
+
+- [#2573](https://github.com/solana-labs/solana-web3.js/pull/2573) [`a29bfee`](https://github.com/solana-labs/solana-web3.js/commit/a29bfeeb2119d99906a31fb1e5103d8ebf783ceb) Thanks [@lorisleiva](https://github.com/lorisleiva)! - Fix missing export of Zeroable Option codecs
+
+- [#2606](https://github.com/solana-labs/solana-web3.js/pull/2606) [`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b) Thanks [@lorisleiva](https://github.com/lorisleiva)! - Use commonjs package type
+
+- Updated dependencies [[`3bf31e7`](https://github.com/solana-labs/solana-web3.js/commit/3bf31e7b7918cb60cd9f5f4476909d81257cdfd7), [`26dae19`](https://github.com/solana-labs/solana-web3.js/commit/26dae190c2ec835fbdaa7b7d66ca33d6ba0727b8), [`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b)]:
+  - @solana/codecs-strings@2.0.0-preview.4
+  - @solana/codecs-data-structures@2.0.0-preview.4
+  - @solana/codecs-numbers@2.0.0-preview.4
+  - @solana/codecs-core@2.0.0-preview.4
+  - @solana/errors@2.0.0-preview.4
+
 ## 2.0.0-preview.3
 
 ### Patch Changes

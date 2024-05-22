@@ -1,5 +1,17 @@
 # @solana/compat
 
+## 2.0.0-preview.4
+
+### Patch Changes
+
+- [#2606](https://github.com/solana-labs/solana-web3.js/pull/2606) [`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b) Thanks [@lorisleiva](https://github.com/lorisleiva)! - Use commonjs package type
+
+- Updated dependencies [[`cb49bfa`](https://github.com/solana-labs/solana-web3.js/commit/cb49bfa28f412376a41e758eeda59e7e90983147), [`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b)]:
+  - @solana/keys@2.0.0-preview.4
+  - @solana/transactions@2.0.0-preview.4
+  - @solana/addresses@2.0.0-preview.4
+  - @solana/errors@2.0.0-preview.4
+
 ## 2.0.0-preview.3
 
 ### Patch Changes

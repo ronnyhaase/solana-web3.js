@@ -1,5 +1,34 @@
 # @solana/web3.js-experimental
 
+## 2.0.0-preview.4
+
+### Patch Changes
+
+- [#2728](https://github.com/solana-labs/solana-web3.js/pull/2728) [`f1e9ac2`](https://github.com/solana-labs/solana-web3.js/commit/f1e9ac2af579e4fbfb5550cbdbd971a87a4e4432) Thanks [@joncinque](https://github.com/joncinque)! - Simulate with the maximum quantity of compute units (1.4M) instead of `u32::MAX`
+
+- [#2606](https://github.com/solana-labs/solana-web3.js/pull/2606) [`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b) Thanks [@lorisleiva](https://github.com/lorisleiva)! - Use commonjs package type
+
+- [#2703](https://github.com/solana-labs/solana-web3.js/pull/2703) [`0908628`](https://github.com/solana-labs/solana-web3.js/commit/09086289a230aa1b780c1035408b48243ab960f2) Thanks [@steveluscher](https://github.com/steveluscher)! - Created a utility function to estimate the compute unit consumption of a transaction message
+
+- Updated dependencies [[`26dae19`](https://github.com/solana-labs/solana-web3.js/commit/26dae190c2ec835fbdaa7b7d66ca33d6ba0727b8), [`cb49bfa`](https://github.com/solana-labs/solana-web3.js/commit/cb49bfa28f412376a41e758eeda59e7e90983147), [`3d90241`](https://github.com/solana-labs/solana-web3.js/commit/3d902419c1b232fa7145757b9c95976de69790c7), [`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b)]:
+  - @solana/codecs@2.0.0-preview.4
+  - @solana/signers@2.0.0-preview.4
+  - @solana/keys@2.0.0-preview.4
+  - @solana/transaction-messages@2.0.0-preview.4
+  - @solana/transaction-confirmation@2.0.0-preview.4
+  - @solana/rpc-subscriptions@2.0.0-preview.4
+  - @solana/rpc-parsed-types@2.0.0-preview.4
+  - @solana/instructions@2.0.0-preview.4
+  - @solana/transactions@2.0.0-preview.4
+  - @solana/functional@2.0.0-preview.4
+  - @solana/addresses@2.0.0-preview.4
+  - @solana/rpc-types@2.0.0-preview.4
+  - @solana/accounts@2.0.0-preview.4
+  - @solana/programs@2.0.0-preview.4
+  - @solana/sysvars@2.0.0-preview.4
+  - @solana/errors@2.0.0-preview.4
+  - @solana/rpc@2.0.0-preview.4
+
 ## 2.0.0-preview.3
 
 ### Patch Changes

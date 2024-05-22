@@ -1,5 +1,18 @@
 # @solana/codecs-strings
 
+## 2.0.0-preview.4
+
+### Patch Changes
+
+- [`3bf31e7`](https://github.com/solana-labs/solana-web3.js/commit/3bf31e7b7918cb60cd9f5f4476909d81257cdfd7) Thanks [@steveluscher](https://github.com/steveluscher)! - Converting a base16 string to a byte buffer is now between 2-3x faster (Thanks @tibi77!)
+
+- [#2606](https://github.com/solana-labs/solana-web3.js/pull/2606) [`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b) Thanks [@lorisleiva](https://github.com/lorisleiva)! - Use commonjs package type
+
+- Updated dependencies [[`367b8ad`](https://github.com/solana-labs/solana-web3.js/commit/367b8ad0cce55a916abfb0125f36b6e844333b2b)]:
+  - @solana/codecs-numbers@2.0.0-preview.4
+  - @solana/codecs-core@2.0.0-preview.4
+  - @solana/errors@2.0.0-preview.4
+
 ## 2.0.0-preview.3
 
 ### Patch Changes
